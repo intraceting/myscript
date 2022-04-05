@@ -7,7 +7,7 @@
 #
 CURDIR=$(cd `dirname $0`; pwd)
 
-#
+#0 is ok,!0 is not ok.
 STATUS="1"
 
 #
