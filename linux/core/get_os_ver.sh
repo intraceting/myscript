@@ -6,7 +6,7 @@
 ##
 
 #
-CURDIR=$(cd `dirname $0`; pwd)
+SHELL_DIR=$(cd `dirname $0`; pwd)
 
 #
 if [ -f /etc/os-release ];then 

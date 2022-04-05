@@ -5,7 +5,7 @@
 # MIT License
 ##
 #
-CURDIR=$(cd `dirname $0`; pwd)
+SHELL_DIR=$(cd `dirname $0`; pwd)
 
 #0 is ok,!0 is not ok.
 STATUS="1"

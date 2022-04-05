@@ -5,12 +5,12 @@
 # MIT License
 ##
 #
-CURDIR=$(cd `dirname $0`; pwd)
+SHELL_DIR=$(cd `dirname $0`; pwd)
 
 #
-if [ $(${CURDIR}/check_os_id.sh "Ubuntu|Debian") -ge 1 ];then
+if [ $(${SHELL_DIR}/check_os_id.sh "Ubuntu|Debian") -ge 1 ];then
 	echo "deb"
-elif [ $(${CURDIR}/check_os_id.sh "CentOS|Red Hat|RedHat|RHEL|fedora|Amazon|amzn|Oracle") -ge 1 ];then
+elif [ $(${SHELL_DIR}/check_os_id.sh "CentOS|Red Hat|RedHat|RHEL|fedora|Amazon|amzn|Oracle") -ge 1 ];then
 	echo "rpm"
 else
 	echo ""
