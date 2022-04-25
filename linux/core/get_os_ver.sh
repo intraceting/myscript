@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This file is part of MYSCRIPT.
 #  
@@ -6,7 +6,7 @@
 ##
 
 #
-SHELL_DIR=$(cd `dirname $0`; pwd)
+CURDIR=$(cd `dirname $0`; pwd)
 
 #
 if [ -f /etc/os-release ];then 

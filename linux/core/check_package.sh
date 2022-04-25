@@ -1,16 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This file is part of MYSCRIPT.
 #  
 # MIT License
 ##
 #
-SHELL_DIR=$(cd `dirname $0`; pwd)
+CURDIR=$(cd `dirname $0`; pwd)
 
-# 0 is ok,!0 is not ok.
+#0 已安装，!0 未安装。
 STATUS="1"
 #
-KIT_NAME=$(${SHELL_DIR}/get_kit_name.sh)
+KIT_NAME=$(${CURDIR}/get_kit_name.sh)
 
 #
 if [ "deb" == "${KIT_NAME}" ];then 
