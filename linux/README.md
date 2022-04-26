@@ -1,2 +1,2 @@
 ## myscript
-My script for linux system.
+linux系统经常用的脚本文件。
