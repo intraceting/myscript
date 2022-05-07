@@ -1,0 +1,37 @@
+#!/bin/bash -x
+#
+# This file is part of MYSCRIPT.
+#  
+# MIT License
+##
+#
+CURDIR=$(cd `dirname $0`; pwd)
+
+#检查screen是否已安装。
+STATUS=$(${CURDIR}/check_which.sh screen)
+if [ ${STATUS} -ne 0 ];then
+{
+    echo "'screen' is not installed."
+    exit 1
+}
+fi
+
+#
+if [ $# -lt 1 ];then
+{
+    echo "no command line."
+    exit 22
+}
+fi
+
+#命令行
+CMDLINE=$*
+#命令名字
+CMDNAME=$(basename $1)
+
+#交互式启动。
+#screen -x -S ${CMDNAME} -p 0 -X stuff "${CMDLINE}"
+#screen -x -S ${CMDNAME} -p 0 -X stuff $'\n'
+
+#直接启动。
+screen -d -m -S ${CMDNAME} ${CMDLINE}
