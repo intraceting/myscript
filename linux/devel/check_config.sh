@@ -389,8 +389,30 @@ CheckHavePackage()
                 echo "libmagickwand-dev"
             fi
         }
+        elif [ "${PKG_NAME}" == "kafka" ];then
+        {
+            if [ ${FLAG} -eq 1 ];then
+                echo "$(CheckHavePackageFromKit librdkafka-dev)"
+            elif [ ${FLAG} -eq 2 ];then
+                echo "$(pkg-config --cflags rdkafka)"
+            elif [ ${FLAG} -eq 3 ];then
+                echo "$(pkg-config --libs rdkafka)"
+            else
+                echo "librdkafka-dev"
+            fi
+        }
         else
-            echo "1"
+        {
+            if [ ${FLAG} -eq 1 ];then 
+                echo "1"
+            elif [ ${FLAG} -eq 2 ];then
+                echo ""
+            elif [ ${FLAG} -eq 3 ];then
+                echo ""
+            else
+                echo "${PKG_NAME}"
+            fi
+        }
         fi
     }
 	elif [ "rpm" == "${KIT_NAME}" ];then
@@ -717,6 +739,18 @@ CheckHavePackage()
                 echo "$(pkg-config --libs MagickWand)"
             else
                 echo "ImageMagick-devel"
+            fi
+        }
+        elif [ "${PKG_NAME}" == "kafka" ];then
+        {
+            if [ ${FLAG} -eq 1 ];then
+                echo "$(CheckHavePackageFromKit librdkafka-devel)"
+            elif [ ${FLAG} -eq 2 ];then
+                echo "$(pkg-config --cflags rdkafka)"
+            elif [ ${FLAG} -eq 3 ];then
+                echo "$(pkg-config --libs rdkafka)"
+            else
+                echo "librdkafka-devel"
             fi
         }
         else
