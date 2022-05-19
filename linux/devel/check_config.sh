@@ -401,6 +401,18 @@ CheckHavePackage()
                 echo "librdkafka-dev"
             fi
         }
+        elif [ "${PKG_NAME}" == "uuid" ];then
+        {
+            if [ ${FLAG} -eq 1 ];then
+                echo "$(CheckHavePackageFromKit uuid-dev)"
+            elif [ ${FLAG} -eq 2 ];then
+                echo "$(pkg-config --cflags uuid)"
+            elif [ ${FLAG} -eq 3 ];then
+                echo "$(pkg-config --libs uuid)"
+            else
+                echo "uuid-dev"
+            fi
+        }
         else
         {
             if [ ${FLAG} -eq 1 ];then 
@@ -751,6 +763,18 @@ CheckHavePackage()
                 echo "$(pkg-config --libs rdkafka)"
             else
                 echo "librdkafka-devel"
+            fi
+        }
+        elif [ "${PKG_NAME}" == "uuid" ];then
+        {
+            if [ ${FLAG} -eq 1 ];then
+                echo "$(CheckHavePackageFromKit libuuid-devel)"
+            elif [ ${FLAG} -eq 2 ];then
+                echo "$(pkg-config --cflags uuid)"
+            elif [ ${FLAG} -eq 3 ];then
+                echo "$(pkg-config --libs uuid)"
+            else
+                echo "libuuid-devel"
             fi
         }
         else
