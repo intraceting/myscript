@@ -9,4 +9,4 @@
 CURDIR=$(cd `dirname $0`; pwd)
 
 #
-${CURDIR}/get_os_id.sh | grep -iE "${1}" |wc -l
+${CURDIR}/get-os-id.sh | grep -iE "${1}" |wc -l

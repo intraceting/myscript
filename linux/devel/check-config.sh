@@ -21,19 +21,19 @@ checkReturnCode()
 CheckSystemName()
 # $1 System Name
 {
-    echo "$(${CURDIR}/../core/check_os_id.sh $1)"
+    echo "$(${CURDIR}/../core/check-os-id.sh $1)"
 }
 
 #
 GetSystemVersion()
 {
-    echo "$(${CURDIR}/../core/get_os_ver.sh)"
+    echo "$(${CURDIR}/../core/get-os-ver.sh)"
 }
 
 #
 CheckPackageKitName()
 {
-	echo "$(${CURDIR}/../core/get_kit_name.sh)"
+	echo "$(${CURDIR}/../core/get-kit-name.sh)"
 }
 
 
@@ -41,14 +41,14 @@ CheckPackageKitName()
 CheckHavePackageFromKit()
 # $1 PACKAGE
 {
-	echo "$(${CURDIR}/../core/check_package.sh $1)"
+	echo "$(${CURDIR}/../core/check-package.sh $1)"
 }
 
 #
 CheckHavePackageFromWhich()
 # $1 PACKAGE
 {
-	echo "$(${CURDIR}/../core/check_which.sh $1)"
+	echo "$(${CURDIR}/../core/check-which.sh $1)"
 }
 
 #
