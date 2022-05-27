@@ -6,7 +6,7 @@
 ##
 
 #
-CURDIR=$(cd `dirname $0`; pwd)
+SHELLDIR=$(cd `dirname $0`; pwd)
 
 #
-${CURDIR}/get-os-id.sh | grep -iE "${1}" |wc -l
+${SHELLDIR}/get-os-id.sh | grep -iE "${1}" |wc -l

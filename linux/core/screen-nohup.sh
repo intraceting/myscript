@@ -5,10 +5,10 @@
 # MIT License
 ##
 #
-CURDIR=$(cd `dirname $0`; pwd)
+SHELLDIR=$(cd `dirname $0`; pwd)
 
 #检查screen是否已安装。
-STATUS=$(${CURDIR}/check_which.sh screen)
+STATUS=$(${SHELLDIR}/check_which.sh screen)
 if [ ${STATUS} -ne 0 ];then
 {
     echo "'screen' is not installed."

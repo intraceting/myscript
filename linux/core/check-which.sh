@@ -5,7 +5,7 @@
 # MIT License
 ##
 #
-CURDIR=$(cd `dirname $0`; pwd)
+SHELLDIR=$(cd `dirname $0`; pwd)
 
 #0 已安装，!0 未安装。
 STATUS="1"

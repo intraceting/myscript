@@ -6,7 +6,7 @@
 ##
 
 #
-CURDIR=$(cd `dirname $0`; pwd)
+SHELLDIR=$(cd `dirname $0`; pwd)
 
 # Functions
 checkReturnCode()
@@ -21,19 +21,19 @@ checkReturnCode()
 CheckSystemName()
 # $1 System Name
 {
-    echo "$(${CURDIR}/../core/check-os-id.sh $1)"
+    echo "$(${SHELLDIR}/../core/check-os-id.sh $1)"
 }
 
 #
 GetSystemVersion()
 {
-    echo "$(${CURDIR}/../core/get-os-ver.sh)"
+    echo "$(${SHELLDIR}/../core/get-os-ver.sh)"
 }
 
 #
 CheckPackageKitName()
 {
-	echo "$(${CURDIR}/../core/get-kit-name.sh)"
+	echo "$(${SHELLDIR}/../core/get-kit-name.sh)"
 }
 
 
@@ -41,14 +41,14 @@ CheckPackageKitName()
 CheckHavePackageFromKit()
 # $1 PACKAGE
 {
-	echo "$(${CURDIR}/../core/check-package.sh $1)"
+	echo "$(${SHELLDIR}/../core/check-package.sh $1)"
 }
 
 #
 CheckHavePackageFromWhich()
 # $1 PACKAGE
 {
-	echo "$(${CURDIR}/../core/check-which.sh $1)"
+	echo "$(${SHELLDIR}/../core/check-which.sh $1)"
 }
 
 #
