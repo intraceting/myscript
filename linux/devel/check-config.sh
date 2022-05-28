@@ -464,9 +464,21 @@ CheckHavePackage()
             if [ ${FLAG} -eq 1 ];then
                 echo "$(CheckHavePackageFromKit unixODBC-devel)"
             elif [ ${FLAG} -eq 2 ];then
-                echo "$(pkg-config --cflags odbc)"
+                if [ ${SYS_VERID} -eq 7 ];then
+                    echo "-DHAVE_UNISTD_H -DHAVE_PWD_H -DHAVE_SYS_TYPES_H -DHAVE_LONG_LONG -DSIZEOF_LONG_INT=8"
+                elif [ ${SYS_VERID} -eq 8 ];then
+                    echo "$(pkg-config --cflags odbc)"
+                else 
+                    echo ""
+                fi
             elif [ ${FLAG} -eq 3 ];then
-                echo "$(pkg-config --libs odbc)"
+                if [ ${SYS_VERID} -eq 7 ];then
+                    echo "-lodbc"
+                elif [ ${SYS_VERID} -eq 8 ];then
+                    echo "$(pkg-config --libs odbc)"
+                else 
+                    echo ""
+                fi
             elif [ ${FLAG} -eq 4 ];then
                 echo "unixODBC-devel"
             else 
