@@ -134,7 +134,7 @@ CheckHavePackage()
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libswscale libavutil libavcodec libavformat libavdevice libavfilter libavresample libpostproc libswresample)"
             else
-                echo "libswscale-dev libavutil-dev libavcodec-dev libavformat-dev libavdevice-dev"
+                echo "libswscale-dev libavutil-dev libavcodec-dev libavformat-dev libavdevice-dev libavfilter-dev libavresample-dev libpostproc-dev libswresample-dev"
             fi
         }
         elif [ "${PKG_NAME}" == "freeimage" ];then
@@ -479,10 +479,8 @@ CheckHavePackage()
                 else 
                     echo ""
                 fi
-            elif [ ${FLAG} -eq 4 ];then
-                echo "unixODBC-devel"
             else 
-                echo "unixODBC"
+                echo "unixODBC-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "sqlite" ];then
@@ -493,10 +491,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags sqlite3)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs sqlite3)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "sqlite-devel"
             else
-                echo "sqlite"
+                echo "sqlite-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "openssl" ];then
@@ -507,10 +503,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags openssl)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs openssl)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "openssl-devel"
             else
-                echo "openssl"
+                echo "openssl-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "ffmpeg" ];then
@@ -521,10 +515,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libswscale libavutil libavcodec libavformat libavdevice libavfilter libavresample libpostproc libswresample)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libswscale libavutil libavcodec libavformat libavdevice libavfilter libavresample libpostproc libswresample)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "ffmpeg-devel"
             else 
-                echo "ffmpeg"
+                echo "ffmpeg-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "freeimage" ];then
@@ -535,10 +527,8 @@ CheckHavePackage()
                 echo ""
             elif [ ${FLAG} -eq 3 ];then
                 echo "-lfreeimage"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "freeimage-devel"
             else
-                echo "freeimage"
+                echo "freeimage-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "fuse" ];then
@@ -549,10 +539,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags fuse)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs fuse)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "fuse-devel"
             else
-                echo "fuse"
+                echo "fuse-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "libnm" ];then
@@ -563,10 +551,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libnm)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libnm)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "NetworkManager-libnm-devel"
             else
-                echo "NetworkManager-libnm"
+                echo "NetworkManager-libnm-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "lz4" ];then
@@ -577,10 +563,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags liblz4)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs liblz4)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "lz4-devel"
             else
-                echo "lz4"
+                echo "lz4-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "zlib" ];then
@@ -591,10 +575,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags zlib)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs zlib)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "zlib-devel"
             else
-                echo "zlib"
+                echo "zlib-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "archive" ];then
@@ -605,10 +587,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libarchive)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libarchive)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "libarchive-devel"
             else
-                echo "libarchive"
+                echo "libarchive-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "modbus" ];then
@@ -619,16 +599,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libmodbus)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libmodbus)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "libmodbus-devel"
             else
-                if [ ${SYS_VERID} -eq 7 ];then
-                    echo "libmodbus"
-                elif [ ${SYS_VERID} -eq 8 ];then
-                    echo "libmodbus"
-                else 
-                    echo ""
-                fi
+                echo "libmodbus-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "libusb" ];then
@@ -639,10 +611,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libusb-1.0)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libusb-1.0)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "libusbx-devel"
             else
-                echo "libusbx"
+                echo "libusbx-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "mqtt" ];then
@@ -653,10 +623,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libmosquitto)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libmosquitto)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "mosquitto-devel"
             else
-                echo "mosquitto"
+                echo "mosquitto-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "redis" ];then
@@ -667,10 +635,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags hiredis)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs hiredis)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "hiredis-devel"
             else
-                echo "hiredis"
+                echo "hiredis-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "json-c" ];then
@@ -681,10 +647,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags json-c)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs json-c)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "json-c-devel"
             else
-                echo "json-c"
+                echo "json-c-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "bluez" ];then
@@ -695,10 +659,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags bluez)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs bluez)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "bluez-libs-devel"
             else
-                echo "bluez-libs"
+                echo "bluez-libs-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "blkid" ];then
@@ -709,10 +671,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags blkid)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs blkid)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "libblkid-devel"
             else
-                echo "libblkid"
+                echo "libblkid-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "libcap" ];then
@@ -723,10 +683,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libcap)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libcap)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "libcap-devel"
             else
-                echo "libcap"
+                echo "libcap-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "fastcgi" ];then
@@ -737,10 +695,8 @@ CheckHavePackage()
                 echo ""
             elif [ ${FLAG} -eq 3 ];then
                 echo "-lfcgi"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "fcgi-devel"
             else
-                echo "fcgi"
+                echo "fcgi-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "systemd" ];then
@@ -751,10 +707,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libsystemd)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libsystemd)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "systemd-devel"
             else
-                echo "systemd"
+                echo "systemd-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "libudev" ];then
@@ -765,10 +719,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libudev)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libudev)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "systemd-devel"
             else
-                echo "systemd"
+                echo "systemd-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "dmtx" ];then
@@ -779,10 +731,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libdmtx)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libdmtx)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "libdmtx-devel"
             else
-                echo "libdmtx"
+                echo "libdmtx-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "qrencode" ];then
@@ -793,10 +743,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags libqrencode)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs libqrencode)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "qrencode-devel"
             else
-                echo "qrencode"
+                echo "qrencode-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "zbar" ];then
@@ -807,10 +755,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags zbar)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs zbar)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "zbar-devel"
             else
-                echo "zbar"
+                echo "zbar-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "magickwand" ];then
@@ -821,10 +767,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags MagickWand)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs MagickWand)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "ImageMagick-devel"
             else
-                echo "ImageMagick"
+                echo "ImageMagick-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "kafka" ];then
@@ -835,10 +779,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags rdkafka)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs rdkafka)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "librdkafka-devel"
             else
-                echo "librdkafka"
+                echo "librdkafka-devel"
             fi
         }
         elif [ "${PKG_NAME}" == "uuid" ];then
@@ -849,10 +791,8 @@ CheckHavePackage()
                 echo "$(pkg-config --cflags uuid)"
             elif [ ${FLAG} -eq 3 ];then
                 echo "$(pkg-config --libs uuid)"
-            elif [ ${FLAG} -eq 4 ];then
-                echo "libuuid-devel"
             else
-                echo "libuuid"
+                echo "libuuid-devel"
             fi
         }
         else
@@ -862,10 +802,6 @@ CheckHavePackage()
             elif [ ${FLAG} -eq 2 ];then
                 echo ""
             elif [ ${FLAG} -eq 3 ];then
-                echo ""
-            elif [ ${FLAG} -eq 4 ];then
-                echo ""
-            elif [ ${FLAG} -eq 5 ];then
                 echo ""
             else 
                 echo "${PKG_NAME}"
@@ -877,6 +813,14 @@ CheckHavePackage()
         echo "1"
     fi
 }
+
+#
+if [ $# -ne 2 ];then
+{
+    echo "22"
+    exit 22
+}
+fi
 
 ##
 echo $(CheckHavePackage $1 $2)
