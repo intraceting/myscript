@@ -41,7 +41,7 @@ CheckPackageKitName()
 CheckHavePackageFromKit()
 # $1 PACKAGE
 {
-	echo "$(${SHELLDIR}/../core/check-package.sh $1)"
+	echo "$(${SHELLDIR}/../core/check-package.sh "$1")"
 }
 
 #
@@ -128,7 +128,7 @@ CheckHavePackage()
         elif [ "${PKG_NAME}" == "ffmpeg" ];then
         {
             if [ ${FLAG} -eq 1 ];then
-                echo "$(CheckHavePackageFromKit "libswscale-dev libavutil-dev libavcodec-dev libavformat-dev libavdevice-dev")"
+                echo "$(CheckHavePackageFromKit "libswscale-dev libavutil-dev libavcodec-dev libavformat-dev libavdevice-dev libavfilter-dev libavresample-dev libpostproc-dev libswresample-dev")"
             elif [ ${FLAG} -eq 2 ];then
                 echo "$(pkg-config --cflags libswscale libavutil libavcodec libavformat libavdevice libavfilter libavresample libpostproc libswresample)"
             elif [ ${FLAG} -eq 3 ];then
