@@ -9,7 +9,7 @@
 SHELLDIR=$(cd `dirname $0`; pwd)
 
 #
-if [ $# -ne 2 ];then
+if [ $# -ne 1 ];then
 {
     echo "22"
     exit 22
