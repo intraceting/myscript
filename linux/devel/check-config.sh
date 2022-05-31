@@ -65,7 +65,19 @@ CheckHavePackage()
     #
 	if [ "deb" == "${KIT_NAME}" ];then 
 	{  
-        if [ "${PKG_NAME}" == "pkgconfig" ];then
+        if [ "${PKG_NAME}" == "binutils" ];then
+        {
+            if [ ${FLAG} -eq 1 ];then
+                echo "$(CheckHavePackageFromKit binutils)"
+            elif [ ${FLAG} -eq 2 ];then
+                echo ""
+            elif [ ${FLAG} -eq 3 ];then
+                echo ""
+            else 
+                echo "binutils"
+            fi
+        }
+        elif [ "${PKG_NAME}" == "pkgconfig" ];then
         {
             if [ ${FLAG} -eq 1 ];then
                 echo "$(CheckHavePackageFromWhich pkg-config)"
@@ -429,7 +441,19 @@ CheckHavePackage()
     }
 	elif [ "rpm" == "${KIT_NAME}" ];then
 	{
-        if [ "${PKG_NAME}" == "pkgconfig" ];then
+        if [ "${PKG_NAME}" == "binutils" ];then
+        {
+            if [ ${FLAG} -eq 1 ];then
+                echo "$(CheckHavePackageFromKit binutils)"
+            elif [ ${FLAG} -eq 2 ];then
+                echo ""
+            elif [ ${FLAG} -eq 3 ];then
+                echo ""
+            else 
+                echo "binutils"
+            fi
+        }
+        elif [ "${PKG_NAME}" == "pkgconfig" ];then
         {
             if [ ${FLAG} -eq 1 ];then
                 echo "$(CheckHavePackageFromWhich pkg-config)"
