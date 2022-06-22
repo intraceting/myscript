@@ -32,5 +32,5 @@ done
 
 #
 DEPENDS=$(cd ${ROOT_PATH};dpkg-shlibdeps -e ${EXE_FILES} -O 2>/dev/null)
-echo -n ${DEPENDS/shlibs:Depends=/Pre-Depends:}
+echo ${DEPENDS/shlibs:Depends=/Pre-Depends:}
 exit 0
