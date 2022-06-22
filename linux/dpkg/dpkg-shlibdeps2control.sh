@@ -11,10 +11,7 @@ SHELLDIR=$(cd `dirname $0`; pwd)
 #
 STATUS=$(${SHELLDIR}/../core/check-package.sh dpkg-dev)
 if [ ${STATUS} -ne 0 ];then
-{
-    echo "Pre-Depends: "
     exit 1
-}
 fi
 
 #
@@ -32,5 +29,22 @@ done
 
 #
 DEPENDS=$(cd ${ROOT_PATH};dpkg-shlibdeps -e ${EXE_FILES} -O 2>/dev/null)
-echo ${DEPENDS/shlibs:Depends=/Pre-Depends:}
+DEPENDS=$(echo ${DEPENDS/shlibs:Depends=/})
+
+#
+TMPFILE=$(mktemp ${ROOT_PATH}/debian/control.XXXXXX)
+
+#安行读取，替换变量${shlibs:Depends}，同时保留格式。
+IFS_OLD=$IFS
+IFS=''
+while read LINE
+do
+echo ${LINE//\$\{shlibs\:Depends\}/${DEPENDS}} >> ${TMPFILE}
+done < ${ROOT_PATH}/debian/control
+IFS=$IFS
+
+#
+mv ${ROOT_PATH}/debian/control ${ROOT_PATH}/debian/control.back
+mv ${TMPFILE} ${ROOT_PATH}/debian/control
+
 exit 0
