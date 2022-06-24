@@ -425,6 +425,18 @@ CheckHavePackage()
                 echo "uuid-dev"
             fi
         }
+        elif [ "${PKG_NAME}" == "openblas" ];then
+        {
+            if [ ${FLAG} -eq 1 ];then
+                echo "$(CheckHavePackageFromKit libopenblas-dev)"
+            elif [ ${FLAG} -eq 2 ];then
+                echo "$(pkg-config --cflags lapack-openblas blas-openblas)"
+            elif [ ${FLAG} -eq 3 ];then
+                echo "$(pkg-config --libs lapack-openblas blas-openblas)"
+            else
+                echo "libopenblas-dev"
+            fi
+        }
         else
         {
             if [ ${FLAG} -eq 1 ];then 
