@@ -831,6 +831,18 @@ CheckHavePackage()
                 echo "libuuid-devel"
             fi
         }
+        elif [ "${PKG_NAME}" == "openblas" ];then
+        {
+            if [ ${FLAG} -eq 1 ];then
+                echo "$(CheckHavePackageFromKit openblas-devel)"
+            elif [ ${FLAG} -eq 2 ];then
+                echo "-I/usr/include/openblas"
+            elif [ ${FLAG} -eq 3 ];then
+                echo "-lopenblas"
+            else
+                echo "openblas-devel"
+            fi
+        }
         else
         {
             if [ ${FLAG} -eq 1 ];then 
