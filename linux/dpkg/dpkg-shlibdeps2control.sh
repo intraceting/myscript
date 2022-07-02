@@ -34,7 +34,7 @@ DEPENDS=$(echo ${DEPENDS/shlibs:Depends=/})
 #
 TMPFILE=$(mktemp ${ROOT_PATH}/debian/control.XXXXXX)
 
-#安行读取，替换变量${shlibs:Depends}，同时保留格式。
+#按行读取，替换变量${shlibs:Depends}，同时保留格式。
 IFS_OLD=$IFS
 IFS=''
 while read LINE
