@@ -21,7 +21,7 @@ EXE_FILES="";
 #遍历项目的目录，找so和exe文件。
 for FILE in `find ${ROOT_PATH}/ -type f`
 do
-	CHK=$(ldd "${FILE}" 2>&1 >>/dev/null; echo $?)
+	CHK=$(ldd "${FILE}" >>/dev/null 2>&1 ; echo $?)
 	if [ ${CHK} -eq 0 ];then
 		EXE_FILES="${FILE} ${EXE_FILES}"
 	fi
